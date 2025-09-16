@@ -1,0 +1,45 @@
+# Antibody Repertoire Analysis Pipeline Configuration
+# Edit paths, samples, and parameters as needed.
+
+# Directories
+input_dir: "/home/rawdata"  # Raw FASTQ files
+mixcr_output_dir: "/home/MixCR"
+ana_output_dir: "/home/Analysis"
+vdj_output_dir: "/home/VDJ_Comparison"
+
+# For VDJ comparison: Paths to unimmunized and immunized summary Excel files
+unimmunized_summary: "/home/unimmunized_result/top_combinations_summary.xlsx"
+immunized_summary: "/home/immunized_result/top_combinations_summary.xlsx"
+
+# Sheet names for VDJ (as in vdj_modified.py)
+unimm_vh_sheets:
+  - SAMPLE1-VH
+  - SAMPLE2-VH
+
+unimm_vk_sheets:
+  - SAMPLE1-VK
+  - SAMPLE2-VK
+  
+imm_vh_sheets:
+  - SAMPLE3-VH
+  - SAMPLE4-VH
+  
+imm_vk_sheets:
+  - SAMPLE3-VK
+  - SAMPLE4-VK
+  
+
+# Samples for ana_modified.py (key: sample_id, value: mixcr_data_dir)
+samples:
+  SAMPLE1: "/home/MixCR"
+  SAMPLE2: "/home/MixCR"
+  SAMPLE3: "/home/MixCR"
+  SAMPLE4: "/home/MixCR"
+
+# Parameters
+mixcr_memory: "500g"  # -Xmx for MixCR
+ana_readcount_threshold: 3  # Default threshold in ana_modified.py
+ana_top_n: 100  # Top combinations per sample
+vdj_top_n: 30  # Top for differences in vdj
+vdj_min_samples: 2
+vdj_alpha: 0.05
