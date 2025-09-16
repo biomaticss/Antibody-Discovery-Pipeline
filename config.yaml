@@ -36,6 +36,10 @@ samples:
   SAMPLE3: "/home/MixCR"
   SAMPLE4: "/home/MixCR"
 
+replicate_pairs:
+  - ["SAMPLE1-VH", "SAMPLE1-VH"]
+  - ["SAMPLE2-VK", "SAMPLE2-VK"]
+  
 # Parameters
 mixcr_memory: "500g"  # -Xmx for MixCR
 ana_readcount_threshold: 3  # Default threshold in ana_modified.py
